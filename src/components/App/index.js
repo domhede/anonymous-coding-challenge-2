@@ -2,16 +2,13 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import Counter from './Counter';
 import Owl from './Owl';
+import CardGrid from './CardGrid';
 
 const Wrapper = styled.div`
   width: 600px;
   margin: auto;
 `;
-const CardGrid = styled.div`
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-column-gap: 16px;
-`;
+
 
 class App extends Component {
   constructor(props) {
@@ -20,32 +17,17 @@ class App extends Component {
       count: 0,
       cardsToShow: 9
     }
-    this.renderCards = this.renderCards.bind(this);
-  }
-
-  renderCards(){
-    const { cardsToShow } = this.state;
-    let cards = [];
-
-    for (let i = 0; i < cardsToShow; i++) {
-      cards.push(<span key={i}>Card</span>);
-    }
-    return (
-      <CardGrid>
-        {cards}
-      </CardGrid>
-    );
   }
 
   render() {
-    const { count } = this.state;
+    const { count, cardsToShow } = this.state;
     return (
       <Wrapper>
         <div>
           <Counter count={count} />
           <Owl awake />
         </div>
-        {this.renderCards()}
+        <CardGrid cardsToShow={cardsToShow} />
       </Wrapper>
     )
   }
