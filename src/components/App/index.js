@@ -17,6 +17,8 @@ class App extends Component {
       cardsToShow: 9
     }
     this.incrementCount = this.incrementCount.bind(this);
+    this.decrementCount = this.decrementCount.bind(this);
+    this.adjustCount = this.adjustCount.bind(this);
   }
 
   incrementCount() {
@@ -24,6 +26,22 @@ class App extends Component {
     this.setState({
       count: count + 1
     })
+  }
+
+  decrementCount() {
+    const { count } = this.state;
+    this.setState({
+      count: count - 1
+    })
+  }
+
+  adjustCount(add) {
+    console.log(add);
+    if (add) {
+      this.incrementCount();
+    } else {
+      this.decrementCount();
+    }
   }
 
   render() {
@@ -34,7 +52,7 @@ class App extends Component {
           <Counter count={count} />
           <Owl awake={count === cardsToShow} />
         </div>
-        <Cards incrementCount={this.incrementCount} cardsToShow={cardsToShow} />
+        <Cards adjustCount={this.adjustCount} cardsToShow={cardsToShow} />
       </Wrapper>
     )
   }

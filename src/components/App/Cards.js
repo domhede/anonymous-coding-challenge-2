@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Card from './Card';;
 
 const CardGrid = styled.div`
   display: grid;
@@ -7,11 +8,11 @@ const CardGrid = styled.div`
   grid-column-gap: 16px;
 `;
 
-const Cards = ({cardsToShow, incrementCount}) => {
+const Cards = ({cardsToShow, adjustCount}) => {
   let cards = [];
 
   for (let i = 0; i < cardsToShow; i++) {
-    cards.push(<span onClick={() => incrementCount()} key={i}>Card</span>);
+    cards.push(<Card adjustCount={adjustCount} key={i} />);
   }
 
   return (
