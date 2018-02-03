@@ -2,13 +2,12 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import Counter from './Counter';
 import Owl from './Owl';
-import CardGrid from './CardGrid';
+import Cards from './Cards';
 
 const Wrapper = styled.div`
   width: 600px;
   margin: auto;
 `;
-
 
 class App extends Component {
   constructor(props) {
@@ -19,12 +18,14 @@ class App extends Component {
     }
     this.incrementCount = this.incrementCount.bind(this);
   }
+
   incrementCount() {
     const { count } = this.state;
     this.setState({
       count: count + 1
     })
   }
+
   render() {
     const { count, cardsToShow } = this.state;
     return (
@@ -33,7 +34,7 @@ class App extends Component {
           <Counter count={count} />
           <Owl awake={count === cardsToShow} />
         </div>
-        <CardGrid incrementCount={this.incrementCount} cardsToShow={cardsToShow} />
+        <Cards incrementCount={this.incrementCount} cardsToShow={cardsToShow} />
       </Wrapper>
     )
   }
