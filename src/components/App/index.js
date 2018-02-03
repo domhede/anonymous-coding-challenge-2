@@ -17,17 +17,23 @@ class App extends Component {
       count: 0,
       cardsToShow: 9
     }
+    this.incrementCount = this.incrementCount.bind(this);
   }
-
+  incrementCount() {
+    const { count } = this.state;
+    this.setState({
+      count: count + 1
+    })
+  }
   render() {
     const { count, cardsToShow } = this.state;
     return (
       <Wrapper>
         <div>
           <Counter count={count} />
-          <Owl awake />
+          <Owl awake={count === cardsToShow} />
         </div>
-        <CardGrid cardsToShow={cardsToShow} />
+        <CardGrid incrementCount={this.incrementCount} cardsToShow={cardsToShow} />
       </Wrapper>
     )
   }

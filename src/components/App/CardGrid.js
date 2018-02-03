@@ -7,11 +7,11 @@ const CardGrid = styled.div`
   grid-column-gap: 16px;
 `;
 
-const Cards = ({cardsToShow}) => {
+const Cards = ({cardsToShow, incrementCount}) => {
   let cards = [];
 
   for (let i = 0; i < cardsToShow; i++) {
-    cards.push(<span key={i}>Card</span>);
+    cards.push(<span onClick={() => incrementCount()} key={i}>Card</span>);
   }
 
   return (
