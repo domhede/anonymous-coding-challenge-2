@@ -46,7 +46,7 @@ const Content = styled.div`
 `;
 const Front = Content.extend`
   z-index: 2;
-  border: 2px solid #fd7512;
+  border: 3px solid #fd7512;
   border-radius: 24px;
 `;
 const Back = Content.extend`

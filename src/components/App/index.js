@@ -11,7 +11,6 @@ const Wrapper = styled.div`
 `;
 const Header = styled.div`
   margin-bottom: 32px;
-  padding: 0px 32px 0px 16px;
 `;
 
 class App extends Component {
