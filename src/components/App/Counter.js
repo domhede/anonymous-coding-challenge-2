@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   display: inline-block;
 `;
 const Star = styled.img`
-  width: 83px;
+  width: 82px;
 `;
 const Count = styled.span`
   font-size: 50px;

@@ -27,7 +27,7 @@ const theme = {
 const Wrapper = styled.div`
   perspective: 1000px;
   width: 150px;
-  height: 150px;
+  height: 142px;
   &:hover {
     cursor: pointer;
   }
@@ -42,11 +42,10 @@ const Content = styled.div`
   backface-visibility: hidden;
   width: 150px;
   height: 142px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
 const Front = Content.extend`
   z-index: 2;
-  border: 3px solid #fd7512;
   border-radius: 24px;
 `;
 const Back = Content.extend`

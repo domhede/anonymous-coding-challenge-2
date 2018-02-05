@@ -5,12 +5,14 @@ import Owl from './Owl';
 import Cards from './Cards';
 
 const Wrapper = styled.div`
-  width: 480px;
+  width: 483px;
   margin: auto;
   margin-top: 64px;
 `;
 const Header = styled.div`
-  margin-bottom: 32px;
+  display: flex;
+  margin-bottom: 24px;
+  height: 78px;
 `;
 
 class App extends Component {
