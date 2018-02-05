@@ -26,8 +26,11 @@ const theme = {
 
 const Wrapper = styled.div`
   perspective: 1000px;
-  width: 158px;
+  width: 150px;
   height: 150px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 const Flipper = styled.div`
   transition: 0.6s;
@@ -37,14 +40,18 @@ const Flipper = styled.div`
 `;
 const Content = styled.div`
   backface-visibility: hidden;
-  width: 158px;
-  height: 150px;
+  width: 150px;
+  height: 142px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 `;
 const Front = Content.extend`
   z-index: 2;
+  border: 2px solid #fd7512;
+  border-radius: 24px;
 `;
 const Back = Content.extend`
   ${props => props.theme};
+  border-radius: 24px;
   position: absolute;
   top: 0;
   left: 0;

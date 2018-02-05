@@ -4,7 +4,7 @@ import sleepingOwl from 'assets/images/sleeping.svg';
 import awakeOwl from 'assets/images/awake.svg';
 
 const Image = styled.img`
-  width: 80px;
+  width: 83px;
   float: right;
 `;
 

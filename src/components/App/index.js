@@ -5,7 +5,7 @@ import Owl from './Owl';
 import Cards from './Cards';
 
 const Wrapper = styled.div`
-  width: 540px;
+  width: 480px;
   margin: auto;
   margin-top: 64px;
 `;
@@ -56,7 +56,7 @@ class App extends Component {
           <Counter count={count} />
           <Owl awake={count === cardsToShow} />
         </Header>
-        <Cards adjustCount={this.adjustCount} cardsToShow={cardsToShow} />
+        <Cards adjustCount={this.adjustCount} />
       </Wrapper>
     )
   }

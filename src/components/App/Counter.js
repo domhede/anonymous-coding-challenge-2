@@ -3,11 +3,10 @@ import styled from 'styled-components';
 import star from 'assets/images/star.svg';
 
 const Wrapper = styled.div`
-  display: inline-flex;
-  align-items: baseline;
+  display: inline-block;
 `;
 const Star = styled.img`
-  width: 100px;
+  width: 83px;
 `;
 const Count = styled.span`
   font-size: 50px;
