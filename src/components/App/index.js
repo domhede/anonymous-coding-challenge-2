@@ -5,8 +5,13 @@ import Owl from './Owl';
 import Cards from './Cards';
 
 const Wrapper = styled.div`
-  width: 600px;
+  width: 540px;
   margin: auto;
+  margin-top: 64px;
+`;
+const Header = styled.div`
+  margin-bottom: 32px;
+  padding: 0px 32px 0px 16px;
 `;
 
 class App extends Component {
@@ -36,7 +41,6 @@ class App extends Component {
   }
 
   adjustCount(add) {
-    console.log(add);
     if (add) {
       this.incrementCount();
     } else {
@@ -48,10 +52,10 @@ class App extends Component {
     const { count, cardsToShow } = this.state;
     return (
       <Wrapper>
-        <div>
+        <Header>
           <Counter count={count} />
           <Owl awake={count === cardsToShow} />
-        </div>
+        </Header>
         <Cards adjustCount={this.adjustCount} cardsToShow={cardsToShow} />
       </Wrapper>
     )

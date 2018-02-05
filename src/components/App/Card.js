@@ -1,10 +1,32 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import Cards from './Cards';
+import cardFront from 'assets/images/card-front.svg';
+import cardBack from 'assets/images/card-back.svg';
 
 const Wrapper = styled.div`
-  /* width: 600px;
-  margin: auto; */
+  perspective: 1000px;
+  width: 158px;
+  height: 150px;
+`;
+const Flipper = styled.div`
+  transition: 0.4s;
+	transform-style: preserve-3d;
+	position: relative;
+  transform: ${props => props.faceUp ? `rotateY(180deg)`: `none`};
+`;
+const Content = styled.div`
+  backface-visibility: hidden;
+  width: 158px;
+  height: 150px;
+`;
+const Front = Content.extend`
+  z-index: 2;
+`;
+const Back = Content.extend`
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
 class Card extends Component {
@@ -24,11 +46,17 @@ class Card extends Component {
   }
 
   render() {
-
     const { faceUp } = this.state;
     return (
-      <Wrapper onClick={this.handleClick} >
-        {faceUp ? 'FaceUp' : 'FaceDown'}
+      <Wrapper onClick={this.handleClick}>
+      <Flipper faceUp={faceUp}>
+        <Front>
+          <img alt='' src={cardFront} />
+        </Front>
+        <Back>
+          <img alt='' src={cardBack} />
+        </Back>
+      </Flipper>
       </Wrapper>
     )
   }

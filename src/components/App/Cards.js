@@ -5,7 +5,7 @@ import Card from './Card';;
 const CardGrid = styled.div`
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-column-gap: 16px;
+  grid-gap: 16px;
 `;
 
 const Cards = ({cardsToShow, adjustCount}) => {
