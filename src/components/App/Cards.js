@@ -8,18 +8,19 @@ const CardGrid = styled.div`
   grid-gap: 16px;
 `;
 
-const Cards = ({cardsToShow, adjustCount}) => {
-  let cards = [];
+const Cards = props =>
+  <CardGrid>
+    <Card {...props} flipStyle='topToBottom' />
+    <Card {...props} flipStyle='leftToRight' />
+    <Card {...props} flipStyle='lotsOfSpinHozizontal' />
 
-  for (let i = 0; i < cardsToShow; i++) {
-    cards.push(<Card adjustCount={adjustCount} key={i} />);
-  }
+    <Card {...props} flipStyle='rightToLeft' />
+    <Card {...props} flipStyle='topToBottom' />
+    <Card {...props} flipStyle='bottomToTop' />
 
-  return (
-    <CardGrid>
-      {cards}
-    </CardGrid>
-  );
-}
+    <Card {...props} flipStyle='leftToRight' />
+    <Card {...props} flipStyle='lotsOfSpinHozizontal' />
+    <Card {...props} flipStyle='lotsOfSpinVertical' />
+  </CardGrid>;
 
 export default Cards;
