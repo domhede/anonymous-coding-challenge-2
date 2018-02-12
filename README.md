@@ -1,4 +1,4 @@
-## REA UI Developer Test
+## Anonymous Coding Challenge 2 - React/Redux
 
 This project is a simple game, built for Chrome on desktop.
 The objective of the game is to simply click each of the cards and have them flip over to reveal the owl underneath until all cards are revealed.
